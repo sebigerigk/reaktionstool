@@ -8,7 +8,7 @@ namespace Reaktionstool
 {
     class Controler
     {
-        public bool zaehler()
+        public void zaehler()
         {
             int sec = 3;
             Konsole console = new Konsole();
@@ -20,8 +20,13 @@ namespace Reaktionstool
                 Thread.Sleep(1000);
                 sec--;
             }
+
+            DateTime start = DateTime.Now;
             console.tastendruck();
-            return true;
+            DateTime end = DateTime.Now;
+            
+            console.ergebnis(double(DateTime time = end - start));
+            
         }
     }
 }

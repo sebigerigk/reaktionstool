@@ -12,7 +12,10 @@ namespace Reaktionstool
     {
         static void Main(string[] args)
         {
-            Zaehler stopWatch = new Zaehler();
+            Controler controler = new Controler();
+            controler.zaehler();
+
+            /*Zaehler stopWatch = new Zaehler();
             stopWatch.Start();
             Thread.Sleep(10000);
             stopWatch.Stop();
@@ -23,7 +26,7 @@ namespace Reaktionstool
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
-            Console.WriteLine("RunTime " + elapsedTime);
+            Console.WriteLine("RunTime " + elapsedTime);*/
         }
     }
 }

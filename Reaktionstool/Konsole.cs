@@ -17,18 +17,21 @@ namespace Reaktionstool
         public void ausgabe(int _timer)
         {
             Console.WriteLine("Countdown:    " + _timer);
+            Console.Clear();
         }
 
-        public bool tastendruck()
+        public void tastendruck()
         {
             Console.ReadKey();
-            return true;
+           // return true;
         }
 
-        public void ergebnis(double _result, int _score)
+        public void ergebnis(double _result/*, int _score*/)
         {
             Console.WriteLine("Dein Ergebnis: " + _result + " Sekunden");
-            Console.WriteLine("Dein Score:    " + _score);
+            //Console.WriteLine("Dein Score:    " + _score);
+            Console.ReadKey();
+
         }
     }
 }
