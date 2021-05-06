@@ -16,9 +16,7 @@ using System.Windows.Threading;
 
 namespace WpfApp1
 {
-    /// <summary>
     /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         int punkte = 0;
@@ -54,8 +52,7 @@ namespace WpfApp1
                 Stroke = Brushes.Black
             };
 
-            // once the Ellipse is set we need to give a X and Y position for the new object
-            // we will calculate the mouse click location and add it there
+            // Zufaellige Stelle spawnen
             Canvas.SetLeft(newEllipse, r.Next(0, 1500));
             Canvas.SetTop(newEllipse, r.Next(0, 550));
 
@@ -77,7 +74,6 @@ namespace WpfApp1
 
                     // create a re Ellipse and give it the following properties
                     // height and width 50 pixels
-                    // border thickness 3 pixels, fill colour set to the custom brush created above
                     // border colour set to black
                     Ellipse newEllipse = new Ellipse
                     {
@@ -87,8 +83,7 @@ namespace WpfApp1
                         Stroke = Brushes.Black
                     };
 
-                    // once the Ellipse is set we need to give a X and Y position for the new object
-                    // we will calculate the mouse click location and add it there
+                    // Zufaellige Stelle spawnen
                     Canvas.SetLeft(newEllipse, r.Next(0, 1500));
                     Canvas.SetTop(newEllipse, r.Next(0, 550));
 
