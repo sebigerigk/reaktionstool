@@ -23,7 +23,7 @@ namespace Reaktionstool
         public void tastendruck()
         {
             Console.ReadKey();
-           // return true;
+           return true;
         }
 
         public void ergebnis(double _result/*, int _score*/)
