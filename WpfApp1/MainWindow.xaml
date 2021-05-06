@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800" FocusManager.FocusedElement="{Binding ElementName=spielfeld}">
     <Grid>
         <Button Click="gamestart" Content="Start" HorizontalAlignment="Left" Height="41" Margin="290,34,0,0" VerticalAlignment="Top" Width="230"/>
-        <Label x:Name="labeltimer" HorizontalAlignment="Center" Margin="396,78,376.6,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,0.497" Height="65" Width="21">
+        <Label x:Name="labeltimer" HorizontalAlignment="Center" Margin="396,78,369.6,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,0.497" Height="65" Width="28">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,8 +19,16 @@
             </Label.RenderTransform>
         </Label>
 
-        <Canvas Name="spielfeld" Focusable="True" MouseLeftButtonDown="add" Background="Gray" Margin="0,132,-0.4,53">
-            
-        </Canvas>
+        <Canvas Name="spielfeld" Focusable="True" MouseLeftButtonDown="add" Background="Gray" Margin="0,132,-0.4,53"/>
+        <Label x:Name="highscore" HorizontalAlignment="Center" Margin="358,93,272.6,0" VerticalAlignment="Top" RenderTransformOrigin="0.476,0.497" Height="65" Width="163">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.232"/>
+                    <TranslateTransform X="0.009" Y="-0.007"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

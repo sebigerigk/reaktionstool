@@ -21,7 +21,8 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        int zähler = 6;
+        int punkte = 0;
+        int zähler = 61;
         DispatcherTimer timer = new DispatcherTimer();
 
         Random r = new Random();
@@ -64,38 +65,48 @@ namespace WpfApp1
 
         private void add(object sender, MouseButtonEventArgs e)
         {
-            if (e.OriginalSource is Ellipse)
+            if (zähler != 0)
             {
-                // if the click source is a Ellipse then we will create a new Ellipse
-                // and link it to the Ellipse that sent the click event
-                Ellipse activeEllipse = (Ellipse)e.OriginalSource; // create the link between the sender Ellipse
-
-                spielfeld.Children.Remove(activeEllipse); // find the Ellipse and remove it from the canvas
-
-                // create a re Ellipse and give it the following properties
-                // height and width 50 pixels
-                // border thickness 3 pixels, fill colour set to the custom brush created above
-                // border colour set to black
-                Ellipse newEllipse = new Ellipse
+                if (e.OriginalSource is Ellipse)
                 {
-                    Width = 50,
-                    Height = 50,
-                    StrokeThickness = 40,
-                    Stroke = Brushes.Black
-                };
+                    // if the click source is a Ellipse then we will create a new Ellipse
+                    // and link it to the Ellipse that sent the click event
+                    Ellipse activeEllipse = (Ellipse)e.OriginalSource; // create the link between the sender Ellipse
 
-                // once the Ellipse is set we need to give a X and Y position for the new object
-                // we will calculate the mouse click location and add it there
-                Canvas.SetLeft(newEllipse, r.Next(0,1500)); 
-                Canvas.SetTop(newEllipse, r.Next(0, 550));
+                    spielfeld.Children.Remove(activeEllipse); // find the Ellipse and remove it from the canvas
 
-                spielfeld.Children.Add(newEllipse); // add the new Ellipse to the canvas
-            }
+                    // create a re Ellipse and give it the following properties
+                    // height and width 50 pixels
+                    // border thickness 3 pixels, fill colour set to the custom brush created above
+                    // border colour set to black
+                    Ellipse newEllipse = new Ellipse
+                    {
+                        Width = 50,
+                        Height = 50,
+                        StrokeThickness = 40,
+                        Stroke = Brushes.Black
+                    };
 
-            // if we clicked on the canvas then we do the following
-            else
-            {
-                
+                    // once the Ellipse is set we need to give a X and Y position for the new object
+                    // we will calculate the mouse click location and add it there
+                    Canvas.SetLeft(newEllipse, r.Next(0, 1500));
+                    Canvas.SetTop(newEllipse, r.Next(0, 550));
+
+                    spielfeld.Children.Add(newEllipse); // add the new Ellipse to the canvas
+
+                    //Highscore anzeigen + erhöhen
+                    punkte += 1;
+                    highscore.Content = "Punkte: " + punkte.ToString();
+                }
+
+                // if we clicked on the canvas then we do the following
+                else
+                {
+                    //Highscore anzeigen + erhöhen
+                    punkte -= 1;
+                    highscore.Content = "Punkte: " + punkte.ToString();
+
+                }
             }
         }
     }
